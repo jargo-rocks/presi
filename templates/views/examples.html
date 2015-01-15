@@ -1,0 +1,38 @@
+<section id="article" ng-click="Article.menu.close()">
+  <article id="examples" ng-class="[Article.item.firstColor, Article.item.pageId, 'indicator-'+Article.item.arrowColor]" class="bg">
+    <a href="/back" ng-class="Article.item.arrowColor" navigate="navigate" class="arrow-left"></a>
+    <div class="title">
+      <h1 ng-class="Article.item.arrowColor">{{Article.item.altName}}</h1>
+      <h2 class="white">Examples</h2>
+    </div>
+    <div class="content white bg">
+      <ul ng-if="Article.item.examples.length &gt; 1" rn-carousel="rn-carousel" rn-carousel-indicator="rn-carousel-indicator" rn-carousel-index="Article.current">
+        <li ng-repeat="trend in Article.item.examples">
+          <video full-screen="full-screen" controls="controls" preload="none" ng-src="{{trend}}" width="100%" height="100%"></video>
+        </li>
+      </ul>
+      <video full-screen="full-screen" controls="controls" preload="none" ng-if="Article.item.examples.length === 1" ng-src="{{Article.item.examples[0]}}" width="100%" height="100%"></video>
+    </div>
+    <nav ng-if="Article.item.examples.length &gt; 1" class="prev-next">
+      <div ng-click="Article.prev()" ng-class="Article.item.arrowColor" class="prev"></div>
+      <div ng-click="Article.next()" ng-class="Article.item.arrowColor" class="next"></div>
+    </nav>
+    <li ng-class="Article.item.secondColor" ng-click="Article.menu.open($event)" class="box small-menu bg"></li>
+  </article>
+</section>
+<nav id="menu" style="display: none" ng-controller="MenuCtrl as Menu" ng-show="Menu.open" ng-animate="{show: 'open-menu', hide: 'close-menu'}">
+  <ul>
+    <li ng-repeat="item in Menu.articles">
+      <a ng-href="/article/{{item.id}}" navigate="navigate"><img ng-src="{{item.image}}" width="30%"><span>{{item.navName}}</span>
+      </a>
+    </li>
+    <li>
+      <a ng-href="/about" navigate="navigate"><img ng-src="/images/tiles/about.svg" width="30%"><span>ElementX</span>
+      </a>
+    </li>
+    <li>
+      <a ng-href="/" navigate="navigate" class="home"><img ng-src="/images/home_icon.svg" width="10%">
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,25 @@
+<section id="article" ng-click="Article.menu.close()">
+  <div ng-init="Article.item = {arrowColor: 'black', secondColor: 'white'}"></div>
+  <article id="about" class="bg white">
+    <div class="content bg white"><img src="images/about.svg" width="100%">
+    </div>
+    <a href="/back" ng-class="Article.item.arrowColor" navigate="navigate" class="arrow-left"></a>
+    <li ng-class="Article.item.secondColor" ng-click="Article.menu.open($event)" class="box small-menu bg"></li>
+  </article>
+</section>
+<nav id="menu" style="display: none" ng-controller="MenuCtrl as Menu" ng-show="Menu.open" ng-animate="{show: 'open-menu', hide: 'close-menu'}">
+  <ul>
+    <li ng-repeat="item in Menu.articles">
+      <a ng-href="/article/{{item.id}}" navigate="navigate"><img ng-src="{{item.image}}" width="30%"><span>{{item.navName}}</span>
+      </a>
+    </li>
+    <li>
+      <a ng-href="/about" navigate="navigate"><img ng-src="/images/tiles/about.svg" width="30%"><span>ElementX</span>
+      </a>
+    </li>
+    <li>
+      <a ng-href="/" navigate="navigate" class="home"><img ng-src="/images/home_icon.svg" width="10%">
+      </a>
+    </li>
+  </ul>
+</nav>

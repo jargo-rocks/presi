@@ -1,0 +1,10 @@
+<section id="home" class="row">
+  <div ng-repeat="tile in Home.tiles" class="tile-wrapper column-3">
+    <a ng-href="/article/{{tile.id}}" navigate="navigate"><img ng-src="{{tile.image}}" width="100%">
+    </a>
+  </div>
+  <div class="tile-wrapper column-3 ng-scope">
+    <a ng-href="/about" navigate="navigate"><img ng-src="images/tiles/about.svg" width="100%">
+    </a>
+  </div>
+</section>

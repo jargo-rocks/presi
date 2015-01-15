@@ -1,0 +1,29 @@
+<article id="{{Article.item.pageId}}" ng-class="Article.item.firstColor" class="layout-2 bg">
+  <a href="/back" ng-class="Article.item.arrowColor" navigate="navigate" class="arrow-left"></a>
+  <div class="top">
+    <h1 ng-class="[Article.item.fourthColor, Article.item.label &amp;&amp; ('big') || ('small')]">{{Article.item.name}}</h1>
+    <p ng-if="Article.item.label">{{Article.item.label}}</p>
+  </div>
+  <div class="bottom">
+    <nav>
+      <ul>
+        <li ng-class="Article.item.thirdColor" class="box xtra-big bg example">
+          <a ng-href="/article/{{Article.item.id}}/{{Article.item.link1.link}}" navigate="navigate">
+            <p ng-class="Article.item.fifthColor">{{Article.item.link1.label}}
+            </p>
+          </a>
+        </li>
+        <li class="box big margin trends">
+          <a ng-href="/article/{{Article.item.id}}/{{Article.item.link2.link}}" navigate="navigate">
+            <p ng-class="Article.item.fourthColor">{{Article.item.link2.label}}
+            </p>
+          </a>
+        </li>
+        <li ng-class="Article.item.secondColor" class="box big bg"></li>
+        <li ng-class="Article.item.thirdColor" class="box small bg"></li>
+        <li ng-class="Article.item.secondColor" ng-click="Article.menu.open($event)" class="box small-menu bg"></li>
+      </ul>
+      <div ng-class="Article.item.thirdColor" class="polygon"></div>
+    </nav>
+  </div>
+</article>

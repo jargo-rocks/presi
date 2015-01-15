@@ -1,0 +1,31 @@
+<article id="{{Article.item.pageId}}" ng-class="Article.item.firstColor" class="layout-5 bg">
+  <a href="/back" ng-class="Article.item.arrowColor" navigate="navigate" class="arrow-left"></a>
+  <div class="top">
+    <h1 ng-class="[Article.item.thirdColor, Article.item.label &amp;&amp; ('big') || ('small')]">{{Article.item.name}}
+</h1>
+  </div>
+  <div class="bottom">
+    <nav>
+      <ul>
+        <li ng-class="Article.item.fifthColor" class="box bg big margin"></li>
+        <li class="box polygon-container">
+          <div ng-class="Article.item.fifthColor" class="polygon bg"></div>
+        </li>
+        <li class="box small trends">
+          <a ng-href="/article/{{Article.item.id}}/{{Article.item.link2.link}}" navigate="navigate">
+            <p ng-class="Article.item.thirdColor">{{Article.item.link2.label}}
+            </p>
+          </a>
+        </li>
+        <li ng-class="Article.item.fourthColor" class="box small bg"></li>
+        <li ng-class="Article.item.secondColor" class="box xtra-big example bg">
+          <a ng-href="/article/{{Article.item.id}}/{{Article.item.link1.link}}" navigate="navigate">
+            <p ng-class="Article.item.firstColor">{{Article.item.link1.label}}
+            </p>
+          </a>
+        </li>
+        <li ng-class="Article.item.secondColor" ng-click="Article.menu.open($event)" class="box small-menu bg"></li>
+      </ul>
+    </nav>
+  </div>
+</article>

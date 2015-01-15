@@ -1,0 +1,29 @@
+<article id="{{Article.item.pageId}}" ng-class="Article.item.firstColor" class="layout-1 bg">
+  <a href="/back" ng-class="Article.item.arrowColor" navigate="navigate" class="arrow-left"></a>
+  <div class="top">
+    <h1 ng-class="Article.item.fourthColor">{{Article.item.name}}
+</h1>
+  </div>
+  <div class="bottom cf">
+    <nav>
+      <ul>
+        <li ng-class="Article.item.thirdColor" class="box small bg"></li>
+        <li class="box big example">
+          <a ng-href="/article/{{Article.item.id}}/{{Article.item.link1.link}}" navigate="navigate">
+            <p ng-class="Article.item.fourthColor">{{Article.item.link1.label}}</p>
+            <div ng-class="Article.item.secondColor" class="polygon bg"></div>
+          </a>
+        </li>
+        <li ng-class="Article.item.thirdColor" class="box small margin bg"></li>
+        <li ng-class="Article.item.secondColor" class="box big bg trends">
+          <a ng-href="/article/{{Article.item.id}}/{{Article.item.link2.link}}" navigate="navigate">
+            <p ng-class="Article.item.fifthColor">{{Article.item.link2.label}}
+            </p>
+          </a>
+        </li>
+        <li ng-class="Article.item.thirdColor" class="box small bg"></li>
+        <li ng-class="Article.item.secondColor" ng-click="Article.menu.open($event)" class="box small-menu bg"></li>
+      </ul>
+    </nav>
+  </div>
+</article>
